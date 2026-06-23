@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WalletExplain API · 技术支持</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --card: #1a2332;
+      --border: #2d3a4f;
+      --text: #e7ecf3;
+      --muted: #9aa8bc;
+      --accent: #14b8a6;
+      --accent-dim: rgba(20, 184, 166, 0.15);
+      --code-bg: #0d1117;
+      --warn: #f59e0b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 2rem 1rem 4rem;
+    }
+    .wrap { max-width: 820px; margin: 0 auto; }
+    header {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      margin-bottom: 2rem;
+      background: linear-gradient(135deg, #1a2332 0%, #0f1a24 100%);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+    header h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+    header .sub { color: var(--muted); font-size: 0.95rem; }
+    header .url {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.4rem 1rem;
+      background: var(--accent-dim);
+      color: var(--accent);
+      border-radius: 999px;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1.25rem;
+    }
+    h2 {
+      font-size: 1.15rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--accent);
+    }
+    h3 {
+      font-size: 1rem;
+      margin: 1.25rem 0 0.6rem;
+      color: var(--text);
+    }
+    p, li { color: var(--muted); font-size: 0.95rem; }
+    p { margin-bottom: 0.75rem; }
+    ul, ol { padding-left: 1.25rem; margin-bottom: 0.75rem; }
+    li { margin-bottom: 0.35rem; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin: 0.75rem 0;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.6rem 0.75rem;
+      text-align: left;
+    }
+    th { background: var(--code-bg); color: var(--text); }
+    td { color: var(--muted); }
+    code {
+      background: var(--code-bg);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.88em;
+      color: #7dd3fc;
+    }
+    pre {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.1rem;
+      overflow-x: auto;
+      font-size: 0.82rem;
+      line-height: 1.55;
+      margin: 0.75rem 0;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+      color: #c9d1d9;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+    .contact-card {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+    .contact-card .label { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.25rem; }
+    .contact-card .value { font-size: 1rem; color: var(--text); font-weight: 500; }
+    .note {
+      background: rgba(245, 158, 11, 0.1);
+      border-left: 3px solid var(--warn);
+      padding: 0.75rem 1rem;
+      border-radius: 0 8px 8px 0;
+      margin: 0.75rem 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .steps { counter-reset: step; list-style: none; padding-left: 0; }
+    .steps li {
+      counter-increment: step;
+      position: relative;
+      padding-left: 2.2rem;
+      margin-bottom: 0.65rem;
+    }
+    .steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: var(--accent-dim);
+      color: var(--accent);
+      border-radius: 50%;
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>WalletExplain API</h1>
+      <p class="sub">AI Model Gateway · 模型世界 · 技术支持文档</p>
+      <a class="url" href="https://api.walletexplain.com" target="_blank">https://api.walletexplain.com</a>
+    </header>
+
+    <section id="contact">
+      <h2>联系我们</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="label">客服邮箱</div>
+          <div class="value"><a href="mailto:support@walletexplain.com">support@walletexplain.com</a></div>
+        </div>
+        <div class="contact-card">
+          <div class="label">微信号</div>
+          <div class="value">Cybercab_Robot</div>
+        </div>
+        <div class="contact-card">
+          <div class="label">QQ</div>
+          <div class="value">377867920</div>
+        </div>
+      </div>
+      <p style="margin-top: 1rem;">反馈问题时请提供：注册邮箱、问题描述与截图、出错时间、使用的客户端。</p>
+    </section>
+
+    <section id="quickstart">
+      <h2>快速开始</h2>
+      <ol class="steps">
+        <li>访问 <a href="https://api.walletexplain.com" target="_blank">api.walletexplain.com</a> 注册账号</li>
+        <li>充值余额或购买订阅套餐</li>
+        <li>进入 <strong>API 密钥</strong> → <strong>创建密钥</strong>，分组选择 <code>default-pool</code></li>
+        <li>复制 API Key（只显示一次，请妥善保存）</li>
+      </ol>
+      <table>
+        <tr><th>项目</th><th>值</th></tr>
+        <tr><td>API 地址（Base URL）</td><td><code>https://api.walletexplain.com/v1</code></td></tr>
+        <tr><td>认证方式</td><td><code>Authorization: Bearer 你的API_KEY</code></td></tr>
+        <tr><td>计费单位</td><td>美元（USD），按 Token 用量扣费</td></tr>
+      </table>
+    </section>
+
+    <section id="curl">
+      <h2>curl 测试</h2>
+      <p>将 <code>你的API_KEY</code> 替换为控制台创建的密钥：</p>
+      <pre><code>curl https://api.walletexplain.com/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer 你的API_KEY" \
+  -d '{
+    "model": "gpt-4o-mini",
+    "messages": [{"role": "user", "content": "你好"}]
+  }'</code></pre>
+      <p>成功时返回 JSON，其中 <code>choices[0].message.content</code> 为 AI 回复内容。</p>
+    </section>
+
+    <section id="lobehub">
+      <h2>LobeHub 接入（推荐）</h2>
+      <ol class="steps">
+        <li>打开 <a href="https://lobechat.com" target="_blank">lobechat.com</a>，用 Google / GitHub 登录</li>
+        <li>进入 <strong>设置</strong> → <strong>语言模型</strong> → <strong>OpenAI</strong></li>
+        <li>填写下方配置</li>
+        <li>选择模型 <code>gpt-5.4</code> 或 <code>gpt-4o-mini</code>，点击 <strong>检查</strong></li>
+        <li>回到聊天界面发送消息测试</li>
+      </ol>
+      <table>
+        <tr><th>配置项</th><th>填写内容</th></tr>
+        <tr><td>API Key</td><td>你的 WalletExplain API Key</td></tr>
+        <tr><td>API 代理地址</td><td><code>https://api.walletexplain.com</code></td></tr>
+        <tr><td>使用 Responses API 规范</td><td><strong>关闭</strong></td></tr>
+        <tr><td>使用客户端请求模式</td><td><strong>关闭</strong>（默认）</td></tr>
+      </table>
+      <div class="note">LobeHub 的代理地址 <strong>不要</strong> 加 <code>/v1</code>。文档中的 API 地址 <code>https://api.walletexplain.com/v1</code> 用于 curl / SDK。</div>
+    </section>
+
+    <section id="clients">
+      <h2>各客户端 Base URL 对照</h2>
+      <table>
+        <tr><th>客户端</th><th>填写的地址</th></tr>
+        <tr><td>curl / Python / Node SDK</td><td><code>https://api.walletexplain.com/v1</code></td></tr>
+        <tr><td>LobeHub</td><td><code>https://api.walletexplain.com</code>（不加 /v1）</td></tr>
+        <tr><td>ChatBox</td><td><code>https://api.walletexplain.com</code>（不加 /v1）</td></tr>
+        <tr><td>Cursor</td><td><code>https://api.walletexplain.com/v1</code></td></tr>
+      </table>
+    </section>
+
+    <section id="models">
+      <h2>支持模型</h2>
+      <ul>
+        <li><code>gpt-5.4</code></li>
+        <li><code>gpt-4o-mini</code></li>
+        <li>更多模型以控制台分组配置为准</li>
+      </ul>
+    </section>
+
+    <section id="faq">
+      <h2>常见问题</h2>
+      <h3>401 Invalid API Key</h3>
+      <p>检查 Key 是否复制完整；确认 Key 未过期、未被删除；确认使用的是用户账号下的 Key，而非误用其他账号。</p>
+      <h3>INSUFFICIENT_BALANCE（余额不足）</h3>
+      <p>账户余额不足，请在控制台充值，或联系客服。</p>
+      <h3>Encrypted content is not supported with this model</h3>
+      <p>请改用 <code>gpt-5.4</code>，或联系管理员将上游账号的 Responses API 设为「强制 Chat Completions」。</p>
+      <h3>网站打不开 / 连接超时</h3>
+      <p>检查 DNS 是否解析正确；Mac 用户可将 DNS 设为 <code>8.8.8.8</code> 和 <code>223.5.5.5</code>。在终端执行 <code>nslookup api.walletexplain.com</code>，应显示 <code>47.237.31.107</code>。</p>
+      <h3>API Key 和 OpenAI 官网 Key 有什么区别？</h3>
+      <p>Sub2API 生成的 Key 用于访问 <code>api.walletexplain.com</code>，从你的账户余额扣费。OpenAI 官网 Key 是上游密钥，由平台配置，用户无需也不应直接使用。</p>
+    </section>
+
+    <footer>
+      <p>WalletExplain API · 最后更新 2026-06-23</p>
+      <p>隐私政策与服务条款（EULA）即将发布</p>
+    </footer>
+  </div>
+</body>
+</html>
